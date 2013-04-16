@@ -1,7 +1,7 @@
 <?php 
 /**
- * ¶¨Ê±Æ÷£¬ÓÃÓÚ¼ÆËãÒ»¶Î´úÂëµÄÖ´ĞĞÊ±¼ä¡£
- * Ê±¼äµ¥Î»ÊÇus
+ * å®šæ—¶å™¨ï¼Œç”¨äºè®¡ç®—ä¸€æ®µä»£ç çš„æ‰§è¡Œæ—¶é—´ã€‚
+ * æ—¶é—´å•ä½æ˜¯us
  * calculate execution time
  * @author xuliqiang <xuliqiang@baidu.com>
  * @package bingo
@@ -11,16 +11,16 @@
 class Bingo_Timer
 {
 	/**
-	 * ÓÃÓÚ´æÔÚÊ±¼äÊı¾İ£º¿ªÊ¼Ê±¼äºÍ½áÊøÊ±¼ä
+	 * ç”¨äºå­˜åœ¨æ—¶é—´æ•°æ®ï¼šå¼€å§‹æ—¶é—´å’Œç»“æŸæ—¶é—´
 	 * @var array
 	 * {
-	 * 		start : ¿ªÊ¼Ê±¼ä
-	 * 		end : ½áÊøÊ±¼ä
+	 * 		start : å¼€å§‹æ—¶é—´
+	 * 		end : ç»“æŸæ—¶é—´
 	 * }
 	 */
 	protected static $_arrData = array();
 	/**
-	 * Ö´ĞĞµÄÊ±¼ä£¬us¡£
+	 * æ‰§è¡Œçš„æ—¶é—´ï¼Œusã€‚
 	 * @var array
 	 * {
 	 * 		$strName => $intTimeUs
@@ -30,7 +30,7 @@ class Bingo_Timer
 	
 	protected static $_intTimeS = null;
 	/**
-	 * ¼ÆÊ±¿ªÊ¼¡£
+	 * è®¡æ—¶å¼€å§‹ã€‚
 	 * @param string $strName
 	 */
 	public static function start($strName)
@@ -38,7 +38,7 @@ class Bingo_Timer
 		self::$_arrData[$strName]['end'] = self::$_arrData[$strName]['start'] = gettimeofday();
 	}
 	/**
-	 * ¼ÆÊ±½áÊø
+	 * è®¡æ—¶ç»“æŸ
 	 * @param string $strName
 	 */
 	public static function end($strName)
@@ -46,7 +46,7 @@ class Bingo_Timer
 		self::$_arrData[$strName]['end'] = gettimeofday();
 	}
 	/**
-	 * ¼ÆËãÖ´ĞĞÊ±¼ä£¬Èç¹ûÃ»ÓĞÖ¸¶¨$strName£¬Ôò·µ»ØËùÓĞµÄÖ´ĞĞÊ±¼äÊı¾İ¡£
+	 * è®¡ç®—æ‰§è¡Œæ—¶é—´ï¼Œå¦‚æœæ²¡æœ‰æŒ‡å®š$strNameï¼Œåˆ™è¿”å›æ‰€æœ‰çš„æ‰§è¡Œæ—¶é—´æ•°æ®ã€‚
 	 * @param string $strName
 	 */
 	public static function calculate($strName='')
@@ -71,7 +71,7 @@ class Bingo_Timer
 		return self::$_intTimeS;
 	}
 	/**
-	 * ¼ÆËãÊ±¼ä
+	 * è®¡ç®—æ—¶é—´
 	 * @param unknown_type $intStart
 	 * @param unknown_type $intEnd
 	 */
